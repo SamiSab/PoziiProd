@@ -1,6 +1,5 @@
 package com.example.analia.apptest;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
-
+import android.widget.TimePicker;
 
 
 public class CountDown extends AppCompatActivity {

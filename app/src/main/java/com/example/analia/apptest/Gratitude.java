@@ -27,19 +27,19 @@ public class Gratitude extends AppCompatActivity {
          */
 
         //Get EditText gratitudeText by id
-        EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
+        //EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
 
         //Storing gratitudeText in a text variable
-        TextView input = (TextView)editTextName.getText();
+        //TextView input = (TextView)editTextName.getText();
         //Text userInput = (Text) editTextName.getText();
         //Context test = (Context) userInput;
 
         //TableRow entry = new TableRow(test);
 
-        TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
+        //TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
 
         //Parameters enforced on table rows
-        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
+        /*TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
 
@@ -47,7 +47,7 @@ public class Gratitude extends AppCompatActivity {
         entry.setLayoutParams(layoutParams);
 
         entry.addView(input);
-        table.addView(entry);
+        table.addView(entry);*/
 
         //Activity should not be switched until user inputted has been stored
         startActivity(new Intent(Gratitude.this, EntryScreen.class));
