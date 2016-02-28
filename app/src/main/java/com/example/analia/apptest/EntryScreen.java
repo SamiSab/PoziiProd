@@ -20,7 +20,8 @@ public class EntryScreen extends AppCompatActivity {
         startActivity(new Intent(EntryScreen.this, Gratitude.class));
     }
 
-    /* LOOK I'M DIFFERENT NOW */
+    /* LOOK I'M DIFFERENT NOW
+    * AGAAAAIIIN*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
