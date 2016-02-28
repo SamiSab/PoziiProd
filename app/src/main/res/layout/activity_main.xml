@@ -9,37 +9,80 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.analia.test.MainActivity"
 
-    android:clickable="true">
+    android:clickable="false"
+    android:background="@drawable/poziiprodback">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/startButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="#7efdf5f5"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_alignTop="@+id/textView"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let&apos;s get productive!"
-        android:textSize="30dp"
+        android:text="Let&apos;s get"
+        android:textSize="35dp"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:elegantTextHeight="true"
+        android:shadowColor="#032109"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#311f1f"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="85dp"
+        android:typeface="monospace"
+        android:paddingBottom="-10dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Timer"
         android:id="@+id/startButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:onClick="onClick"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gratitude"
         android:id="@+id/gratButt"
-        android:layout_below="@+id/startButton"
-        android:layout_alignStart="@+id/startButton"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="42dp"
         android:onClick="onClickGrat"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_below="@+id/startButton"
+        android:layout_alignStart="@+id/startButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="productive!"
+        android:textSize="50dp"
+        android:id="@+id/textView4"
+        android:elegantTextHeight="true"
+        android:shadowColor="#032109"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#311f1f"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        android:layout_below="@+id/textView"
+        android:paddingTop="-10dp" />
 
 
 </RelativeLayout>
