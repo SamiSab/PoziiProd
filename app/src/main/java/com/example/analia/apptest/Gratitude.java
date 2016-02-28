@@ -30,17 +30,23 @@ public class Gratitude extends AppCompatActivity {
         EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
 
         //Storing gratitudeText in a text variable
-        Text userInput = (Text) editTextName.getText();
-        Context test = (Context) userInput;
+        TextView input = (TextView)editTextName.getText();
+        //Text userInput = (Text) editTextName.getText();
+        //Context test = (Context) userInput;
 
-        TableRow entry = new TableRow(test);
+        //TableRow entry = new TableRow(test);
 
         TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
+
         //Parameters enforced on table rows
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
 
+        TableRow entry = new TableRow(this);
+        entry.setLayoutParams(layoutParams);
+
+        entry.addView(input);
         table.addView(entry);
 
         //Activity should not be switched until user inputted has been stored
