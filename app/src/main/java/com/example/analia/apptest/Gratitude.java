@@ -39,6 +39,7 @@ public static String [] text;
         }
             startActivity(intent);
     }
+    //okay what
 
 
     @Override
