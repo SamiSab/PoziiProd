@@ -9,7 +9,9 @@ import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -31,9 +33,15 @@ public class Gratitude extends AppCompatActivity {
         Text userInput = (Text) editTextName.getText();
         Context test = (Context) userInput;
 
-        //Grabbing tableLayout from content_entry_screen
-
         TableRow entry = new TableRow(test);
+
+        TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
+        //Parameters enforced on table rows
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+
+        table.addView(entry);
 
         //Activity should not be switched until user inputted has been stored
         startActivity(new Intent(Gratitude.this, EntryScreen.class));
