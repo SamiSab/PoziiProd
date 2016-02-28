@@ -23,7 +23,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class Gratitude extends AppCompatActivity {
-
+//pls
 public static String [] text;
     public EditText input;
     public TextView output;
