@@ -13,8 +13,9 @@ import android.widget.EditText;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class Gratitude extends AppCompatActivity {
+import org.w3c.dom.Text;
 
+public class Gratitude extends AppCompatActivity {
 
 
     public void doneButton(View view){
@@ -26,15 +27,17 @@ public class Gratitude extends AppCompatActivity {
         //Get EditText gratitudeText by id
         EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
 
-        //Storing gratitudeText in a variable
-        String userInput = editTextName.getText().toString();
+        //Storing gratitudeText in a text variable
+        Text userInput = (Text) editTextName.getText();
+        Context test = (Context) userInput;
 
-        //Textview entryData = new TextView();
+        //Grabbing tableLayout from content_entry_screen
 
-        //TableRow entry = new TableRow(userInput);
+        TableRow entry = new TableRow(test);
 
         //Activity should not be switched until user inputted has been stored
         startActivity(new Intent(Gratitude.this, EntryScreen.class));
+
     }
 
 
