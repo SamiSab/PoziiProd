@@ -76,6 +76,7 @@ public class Gratitude extends AppCompatActivity {
         //setContentView(table);
         startActivity(new Intent(Gratitude.this, EntryScreen.class));
     }
+    //okay
 
 
     @Override
