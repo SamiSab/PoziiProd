@@ -1,15 +1,16 @@
 package com.example.analia.apptest;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.content.Intent;
 import android.widget.TextView;
-import android.widget.TimePicker;
+import android. widget.TimePicker;
+import android.os.CountDownTimer;
 
 public class TimerActivity extends AppCompatActivity {
+    private boolean timerStart = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +57,64 @@ public class TimerActivity extends AppCompatActivity {
         return Integer.toString(currHour) + ":" + currMinuteS;
     }
 
+    /*
     public void onClick(View v) {
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+        int futrHour = timePicker.getCurrentHour();
+        int futrMinute = timePicker.getCurrentMinute();
+        if(futrMinute < 40){
+            futrMinute += 20;
+        }
+        else{
+            int diff = 60 - futrMinute;
+            futrHour += 1;
+            futrMinute = 20 - diff;
+        }
+        while(timePicker.getCurrentHour() != futrHour || timePicker.getCurrentMinute() != futrMinute){
+            if(timePicker.getCurrentMinute() < 59){
+                timePicker.setCurrentMinute(timePicker.getCurrentMinute() + 1);
+            }
+            else{
+                timePicker.setCurrentMinute(0);
+                timePicker.setCurrentHour(timePicker.getCurrentHour() + 1);
+            }
+        }
+
+    }*/
+
+    public void onClick(View v) {
+        CountDownTimer timer = new myCountDownTimer(120000, 60000);
+        if(!timerStart){
+            timer.start();
+            timerStart = true;
+        }
+        else{
+            timer.cancel();
+            timerStart = false;
+        }
 
     }
+    public class myCountDownTimer extends CountDownTimer{
+        public myCountDownTimer(long start, long interval){
+            super(start, interval);
+        }
+        @Override
+        public void onTick(long millisUntilFinished) {
+            TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+            if(timePicker.getCurrentMinute() < 59){
+                timePicker.setCurrentMinute(timePicker.getCurrentMinute() + 1);
+            }
+            else{
+                timePicker.setCurrentMinute(0);
+                timePicker.setCurrentHour(timePicker.getCurrentHour() + 1);
+            }
+        }
 
+        @Override
+        public void onFinish() {
+            TextView finish = (TextView) findViewById(R.id.textView3);
+            finish.setText("Done!");
+        }
+    }
 }
 

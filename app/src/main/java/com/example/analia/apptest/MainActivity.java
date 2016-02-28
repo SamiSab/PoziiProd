@@ -23,5 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         startActivity(new Intent(MainActivity.this, TimerActivity.class));
     }
+    public void onClickGrat(View v) {
+        startActivity(new Intent(MainActivity.this, EntryScreen.class));
+    }
 }
 
