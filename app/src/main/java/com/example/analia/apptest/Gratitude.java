@@ -1,5 +1,6 @@
 package com.example.analia.apptest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,9 +11,12 @@ import android.view.View;
 public class Gratitude extends AppCompatActivity {
 
     public void doneButton(View view){
-
+        /*
+        Need to create TableRow object
+        Place in Grid Layout
+         */
+        startActivity(new Intent(Gratitude.this, EntryScreen.class));
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
