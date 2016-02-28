@@ -30,6 +30,7 @@ public static String [] text;
     public static ArrayList<String> messages = new ArrayList<String>();
 
     public void doneButton(View view){
+
         EditText edit = (EditText)findViewById(R.id.gratitudeText);
         String s = edit.getText().toString();
         messages.add(s);
@@ -38,6 +39,39 @@ public static String [] text;
             intent.putExtra("hello", st);
         }
             startActivity(intent);
+
+        /*
+        Need to create TableRow object
+        Place in Grid Layout
+         */
+
+        //Get EditText gratitudeText by id
+        //EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
+
+        //Storing gratitudeText in a text variable
+        //TextView input = (TextView)editTextName.getText();
+        //Text userInput = (Text) editTextName.getText();
+        //Context test = (Context) userInput;
+
+        //TableRow entry = new TableRow(test);
+
+        //TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
+
+        //Parameters enforced on table rows
+        /*TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+
+        TableRow entry = new TableRow(this);
+        entry.setLayoutParams(layoutParams);
+
+        entry.addView(input);
+        table.addView(entry);*/
+
+        //Activity should not be switched until user inputted has been stored
+        startActivity(new Intent(Gratitude.this, EntryScreen.class));
+
+
     }
     //okay what
 
