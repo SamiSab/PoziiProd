@@ -22,59 +22,16 @@ import org.w3c.dom.Text;
 
 public class Gratitude extends AppCompatActivity {
 
+public static String [] text;
+    public EditText input;
+    public TextView output;
 
     public void doneButton(View view){
-        //Grabbing table from entry_screen
-        /*TableLayout table = (TableLayout)findViewById(R.id.Table1);
-
-        TableRow entry = new TableRow(this);
-        entry.setGravity(Gravity.LEFT);
-
-        //Grabbing text from gratitudeText
-        EditText editTextName = (EditText)findViewById(R.id.gratitudeText);
-        TextView input = (TextView)editTextName.getText();
-
-        entry.addView(input); //Added text field to table row
-        table.addView(entry); //Added row to Table1
-
-
-        RelativeLayout rlayout = (RelativeLayout)findViewById(R.id.entryScreenRL);
-        /*RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.FILL_PARENT,
-                RelativeLayout.LayoutParams.FILL_PARENT);*/
-        /*rlayout.addView(table);
-        setContentView(rlayout);*/
-
-        //Need to add table back to layout
-
-        //Storing gratitudeText in a text variable
-        //TextView input = (TextView)editTextName.getText();
-        /*TextView entryLabel = new TextView(this);
-        entryLabel.setText(editTextName.getText().toString());
-        entryLabel.setTextSize(18);*/
-        //Text userInput = (Text) editTextName.getText();
-        //Context input = (Context)userInput;
-
-        //TableRow entry = new TableRow(test);
-
-        //TableLayout table = (TableLayout) findViewById(R.id.Table1); //Current table layout in EntryScreen
-
-        //Parameters enforced on table rows
-        /*TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);*/
-
-        /*TableRow entry = new TableRow(this); //creating the TableRow
-        entry.setGravity(Gravity.LEFT); //Want to appear on left
-        entry.addView(entryLabel);*/
-        //entry.setLayoutParams(layoutParams); //Setting the parameters of the TableRow
-
-        /*entry.addView(input); //Adding the userInput into the table row*/
-        //table.addView(entry); //Adding the table row into the table*/
-
-        //Activity should not be switched until user inputted has been stored
-        //setContentView(table);
-        startActivity(new Intent(Gratitude.this, EntryScreen.class));
+        EditText edit = (EditText)findViewById(R.id.gratitudeText);
+        String s = edit.getText().toString();
+        Intent intent = new Intent(Gratitude.this, EntryScreen.class);
+        intent.putExtra("hello", s);
+        startActivity(intent);
     }
 
 

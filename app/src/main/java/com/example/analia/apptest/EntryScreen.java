@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.TextView;
 
 public class EntryScreen extends AppCompatActivity {
 
@@ -28,6 +29,8 @@ public class EntryScreen extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +39,13 @@ public class EntryScreen extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("hello");
+        //input = (EditText) findViewById(R.id.gratitudeText);
+        TextView output = (TextView) findViewById(R.id.gratitudeEntries);
+        output.setText(message);
     }
 
     @Override
