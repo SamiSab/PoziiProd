@@ -20,18 +20,24 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class Gratitude extends AppCompatActivity {
 
 public static String [] text;
     public EditText input;
     public TextView output;
+    public static ArrayList<String> messages = new ArrayList<String>();
 
     public void doneButton(View view){
         EditText edit = (EditText)findViewById(R.id.gratitudeText);
         String s = edit.getText().toString();
+        messages.add(s);
         Intent intent = new Intent(Gratitude.this, EntryScreen.class);
-        intent.putExtra("hello", s);
-        startActivity(intent);
+        for (String st:messages) {
+            intent.putExtra("hello", st);
+        }
+            startActivity(intent);
     }
 
 
