@@ -20,6 +20,7 @@ public class EntryScreen extends AppCompatActivity {
         startActivity(new Intent(EntryScreen.this, Gratitude.class));
     }
 
+    /* LOOK I'M DIFFERENT NOW */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
