@@ -1,5 +1,6 @@
 package com.example.analia.apptest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class Gratitude extends AppCompatActivity {
@@ -27,8 +29,11 @@ public class Gratitude extends AppCompatActivity {
         //Storing gratitudeText in a variable
         String userInput = editTextName.getText().toString();
 
+        //Textview entryData = new TextView();
 
+        //TableRow entry = new TableRow(userInput);
 
+        //Activity should not be switched until user inputted has been stored
         startActivity(new Intent(Gratitude.this, EntryScreen.class));
     }
 
