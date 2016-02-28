@@ -4,4 +4,5 @@
     <string name="title_activity_gratitude">Gratitude</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_timer">TimerActivity</string>
+    <string name="title_activity_count_down">CountDown</string>
 </resources>

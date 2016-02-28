@@ -7,10 +7,11 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
 import android. widget.TimePicker;
-import android.os.CountDownTimer;
+import android.widget.Button;
+
 
 public class TimerActivity extends AppCompatActivity {
-    private boolean timerStart = false;
+    private Button goB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +19,13 @@ public class TimerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button goB = (Button) this.findViewById(R.id.button);
+        goB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivity(new Intent(TimerActivity.this, CountDown.class));
             }
-        });*/
+        });
 
     }
 
@@ -57,64 +56,5 @@ public class TimerActivity extends AppCompatActivity {
         return Integer.toString(currHour) + ":" + currMinuteS;
     }
 
-    /*
-    public void onClick(View v) {
-        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
-        int futrHour = timePicker.getCurrentHour();
-        int futrMinute = timePicker.getCurrentMinute();
-        if(futrMinute < 40){
-            futrMinute += 20;
-        }
-        else{
-            int diff = 60 - futrMinute;
-            futrHour += 1;
-            futrMinute = 20 - diff;
-        }
-        while(timePicker.getCurrentHour() != futrHour || timePicker.getCurrentMinute() != futrMinute){
-            if(timePicker.getCurrentMinute() < 59){
-                timePicker.setCurrentMinute(timePicker.getCurrentMinute() + 1);
-            }
-            else{
-                timePicker.setCurrentMinute(0);
-                timePicker.setCurrentHour(timePicker.getCurrentHour() + 1);
-            }
-        }
-
-    }*/
-
-    public void onClick(View v) {
-        CountDownTimer timer = new myCountDownTimer(120000, 60000);
-        if(!timerStart){
-            timer.start();
-            timerStart = true;
-        }
-        else{
-            timer.cancel();
-            timerStart = false;
-        }
-
-    }
-    public class myCountDownTimer extends CountDownTimer{
-        public myCountDownTimer(long start, long interval){
-            super(start, interval);
-        }
-        @Override
-        public void onTick(long millisUntilFinished) {
-            TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
-            if(timePicker.getCurrentMinute() < 59){
-                timePicker.setCurrentMinute(timePicker.getCurrentMinute() + 1);
-            }
-            else{
-                timePicker.setCurrentMinute(0);
-                timePicker.setCurrentHour(timePicker.getCurrentHour() + 1);
-            }
-        }
-
-        @Override
-        public void onFinish() {
-            TextView finish = (TextView) findViewById(R.id.textView3);
-            finish.setText("Done!");
-        }
-    }
 }
 
