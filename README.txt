@@ -1,4 +1,1 @@
-dsaf
-Need to somehow add the others
-
-Testing on that machine
+The app implements a Pomodoro timer, which is a 20 minute timer used to optimize focus and productivity in short periods of time, and a Gratitude Journal inspired by the "Gratitude project" which is centered around the idea of finding one thing every day that you're grateful for.
